@@ -38,19 +38,18 @@ const DataTable = () => {
   const [editData, setEditData] = useState({ _id: '', title: '', body: '' });
   const [loading, setLoading] = useState(true);
   const [snackbar, setSnackbar] = useState({
-  open: false,
-  message: '',
-  severity: 'success', 
-});
-
+    open: false,
+    message: '',
+    severity: 'success',
+  });
 
   const BaseURL = 'http://localhost:8000/api/posts';
-
 
   useEffect(() => {
     fetchPosts();
   }, []);
 
+  //fetchData
   const fetchPosts = async () => {
     try {
       setLoading(true);
@@ -78,6 +77,8 @@ const DataTable = () => {
     const { name, value } = e.target;
     setEditData((prevData) => ({ ...prevData, [name]: value }));
   };
+
+  //Update Function
   const handleUpdate = async () => {
     try {
       await axios.put(`${BaseURL}/${editData._id}`, editData);
@@ -95,6 +96,8 @@ const DataTable = () => {
     setSelectedDeleteId(id);
     setDeleteDialogOpen(true);
   };
+
+  //Delete function
   const handleDelete = async () => {
     try {
       await axios.delete(`${BaseURL}/${selectedDeleteId}`);
@@ -107,14 +110,14 @@ const DataTable = () => {
     }
   };
 
-
+  //Alert message
   const showSnackbar = (message, severity = 'success') => {
-  setSnackbar({ open: true, message, severity });
-};
+    setSnackbar({ open: true, message, severity });
+  };
 
-const handleCloseSnackbar = () => {
-  setSnackbar({ ...snackbar, open: false });
-};
+  const handleCloseSnackbar = () => {
+    setSnackbar({ ...snackbar, open: false });
+  };
 
   return (
 
@@ -228,15 +231,15 @@ const handleCloseSnackbar = () => {
 
 
       <Snackbar
-  open={snackbar.open}
-  autoHideDuration={3000}
-  onClose={handleCloseSnackbar}
-  anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
->
-  <MuiAlert onClose={handleCloseSnackbar} severity={snackbar.severity} sx={{ width: '100%' }} elevation={6} variant="filled">
-    {snackbar.message}
-  </MuiAlert>
-</Snackbar>
+        open={snackbar.open}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <MuiAlert onClose={handleCloseSnackbar} severity={snackbar.severity} sx={{ width: '100%' }} elevation={6} variant="filled">
+          {snackbar.message}
+        </MuiAlert>
+      </Snackbar>
 
 
 

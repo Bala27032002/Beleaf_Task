@@ -1,6 +1,8 @@
 const axios = require('axios');
 const Post = require('../models/TaskModel');
 
+
+//fetch and store data
 exports.fetchAndSavePosts = async (req, res) => {
   try {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -15,6 +17,8 @@ exports.fetchAndSavePosts = async (req, res) => {
   }
 };
 
+
+//Get All data
 exports.getAllPosts = async (req, res) => {
   try {
     const posts = await Post.find();
@@ -24,6 +28,7 @@ exports.getAllPosts = async (req, res) => {
   }
 };
 
+//Update 
 exports.updatePost = async (req, res) => {
   try {
     const { id } = req.params;
@@ -46,7 +51,7 @@ exports.updatePost = async (req, res) => {
   }
 };
 
-
+//Delete
 exports.deletePost = async (req, res) => {
   try {
     await Post.findByIdAndDelete(req.params.id);
