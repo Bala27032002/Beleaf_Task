@@ -1,0 +1,75 @@
+.custom-table-container {
+  background: linear-gradient(to right, #00c9a7, #1cb5e0);
+  padding: 32px;
+  border-radius: 12px;
+}
+
+.gradient-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table-header-cell {
+  background-color: #f0f4f8;
+  font-weight: bold;
+  color: #333;
+  
+}
+
+.MuiTableCell-root {
+  color: #333;
+  font-size: 14px;
+}
+
+.icon-btn {
+  color: #00bfa6; 
+}
+
+.edit-btn:hover {
+  background-color: rgba(0, 191, 166, 0.1);
+}
+
+.delete-btn {
+  color: #ff5252;
+}
+
+.delete-btn:hover {
+  background-color: rgba(255, 82, 82, 0.1);
+}
+
+.table-heading {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+.footer-text {
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+.MuiTableCell-root {
+  border-right: 1px solid #ddd; 
+}
+
+.MuiTableRow-root > .MuiTableCell-root:first-of-type {
+  border-left: 1px solid #ddd;
+}
+.MuiTableRow-root:hover {
+  background-color: #a7ebe1; 
+  transition: background-color 0.3s ease;
+}
+.gradient-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+}
+
+
+.icon-btn:hover {
+  opacity: 0.8;
+}
